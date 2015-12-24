@@ -71,3 +71,15 @@ fn main() {
         Err(e) => println!("Error {}", e)
     };
 }
+
+#[test]
+fn test_floor() {
+    match get_floors("./src/test-input.txt") {
+        Ok(n) => {
+            let (_, position) = move_floors(n);
+            assert_eq!(position, 5);
+        },
+        Err(e) => println!("Error {}", e)
+    }
+
+}
